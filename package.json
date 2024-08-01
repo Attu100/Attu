@@ -12,6 +12,7 @@
     "@babel/runtime": "^7.25.0",
     "@babel/types": "^7.25.2",
     "expo": "~51.0.22",
+    "expo-modules-core": "^1.12.20",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-native": "0.74.3"
