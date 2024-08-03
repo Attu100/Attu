@@ -86,9 +86,9 @@ export function SignUpScreen({navigation}){
             />
             <TouchableOpacity 
                 style={styles.button} 
-                onPress={navigation.navigate("Login")}
+               // onPress={navigation.navigate("Login")}
             >
-                <Text>Next</Text>
+                <Text>Register</Text>
             </TouchableOpacity>
         </ScrollView>
 
@@ -102,6 +102,7 @@ const styles=StyleSheet.create({
         marginTop:StatusBar.currentHeight
     },
     inputField:{
+        width:60,
         borderRadius:10,
         borderWidth:4,
         color:"#8605807a",

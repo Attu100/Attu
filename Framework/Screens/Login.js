@@ -1,6 +1,7 @@
-import { View } from "react-native";
+import { Pressable,View,Text,StyleSheet,StatusBar,TextInput,TouchableOpacity,Button} from "react-native";
+import {useState} from "react";
 
-export function Login(){
+export function Login({navigation}){
 
 const {email, setEmail}=useState("")
 const {password,setPassword}=useState("")
@@ -20,19 +21,12 @@ const {password,setPassword}=useState("")
             />
             <TouchableOpacity 
                 style={styles.button} 
-                onPress={navigation.navigate("Home")}
+                // onPress={navigation.navigate("Home")}
             >
                 <Text>Login</Text>
             </TouchableOpacity>
-            <Text>Do not have account 
-                <TouchableOpacity 
-                    style={styles.button} 
-                    onPress={navigation.navigate("SignUp")}
-                    >
-                    <Text>create account</Text>
-                </TouchableOpacity> 
-            </Text>
-            </View>
+            <Text>Do not have account</Text> <Button value="create account" color="green"/>            
+        </View>
     )
     }
 
@@ -42,6 +36,7 @@ const styles=StyleSheet.create({
         marginTop:StatusBar.currentHeight
     },
     inputField:{
+        width:60,
         borderRadius:10,
         borderWidth:4,
         color:"#8605807a",
@@ -50,7 +45,7 @@ const styles=StyleSheet.create({
     button:{
         backgroundColor:"gold",
         borderRadius:8,
-        width:20,padding:5,
+        padding:5,
         borderWidth:4,
         justifyContent:"center",
         alignItems:"center"
