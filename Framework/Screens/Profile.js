@@ -1,5 +1,4 @@
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
-
+import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native"
 export function Profile (){
     return (
         <View>
@@ -11,7 +10,8 @@ export function Profile (){
             </View>
             
             <View>
-            <TextInput value="firstName"style={styles.profileDetailField}/>  
+                <Text  style={styles.profileDetailField} >firstName</Text>
+            <TextInput value={firstName} style={styles.profileDetailField}/>  
             <TextInput value="lastName" style={styles.profileDetailField}/>  
             <TextInput value="email" style={styles.profileDetailField}/>   
             <TextInput value="phone" style={styles.profileDetailField}/>  
@@ -37,7 +37,12 @@ const styles = StyleSheet.create({
         position:"relative"
     },
     profileDetailField:{
-        width:100,
+            width:"70%",
+            borderRadius:10,
+            borderWidth:4,
+            color:"#8605807a",
+            padding:5,
+            margin:3
     },
     editeProfileButton:{
         padding:4,

@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {Login} from "./Framework/Screens/Login";
+import { SignUpScreen } from './Framework/Screens/SignUp';
+import { Home } from './Framework/Screens/Home';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Login/>
+      <Home/>
     </View>
   );
 }
@@ -12,8 +14,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderRadius:10,
-    borderWidth:4,
-    margin:3
   },
 });
