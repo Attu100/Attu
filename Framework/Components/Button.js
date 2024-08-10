@@ -1,29 +1,29 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export function  Button (ButtonName ="" ){
+export function  Button (ButtonName, onpress){
     return (
-        <View style={styles.buttonField}>
-            <TouchableOpacity>
-                <Text>{ButtonName}</Text>
+         
+            <TouchableOpacity onPress={()=>{{onpress}}} style={styles.Button}>
+                <Text style={{textAlign:"center", width:100}} >{ButtonName}</Text>
             </TouchableOpacity>
-        </View>
+        
 
     )
 }
 
 const styles = StyleSheet.create({
     Button:{
-        width:40,
-        height:30,
-        padding:3,
-        margin:3,
+        padding:1,
+        width:100,
+        margin:2,
+        borderRadius:10,
         backgroundColor:"gold",
-        color:"white"
+        alignItems:"center",
+        justifyContent:"center",
 
     },
     buttonField:{
-        width:41,
+        borderWidth:2,
         height:31,
-
     }
 })

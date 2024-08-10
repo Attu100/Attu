@@ -108,19 +108,19 @@ export function Home(){
             
             <View style={styles.moreDetailField}>
                     
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>About Us</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>Help</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>FAQ</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>Tip Store</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>leagues</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>Our plans </Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>experts Acca</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>sport news</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>terms & condition</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>disclaimer </Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>refund policy</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>channel</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text>payments method</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>About Us</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>Help</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>FAQ</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>Tip Store</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>leagues</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>Our plans </Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>experts Acca</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>sport news</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>disclaimer </Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>refund policy</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>channel</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>terms & condition</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>payment method</Text></TouchableOpacity>
             </View>
         </ScrollView>
 )
@@ -249,17 +249,19 @@ const styles=StyleSheet.create({
         justifyContent:"space-evenly"
     },
     moreDetailField:{
-        height:150,
+        padding:1,
         flexDirection:"row",
-        justifyContent:"space-evenly",
         flexWrap:"wrap"
     },
     moreDetailContainer:{
-        padding:4,
-        marging:1,
-        height:30,
-        borderWidth:2,
+        padding:1,
+        width:100,
+        margin:2,
+        borderRadius:10,
         backgroundColor:"gold",
-        color:"white"
+        alignItems:"center",
+        justifyContent:"center",
+        color:"white",
+        
     }
 })
