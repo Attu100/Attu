@@ -13,8 +13,8 @@ const Stack = createStackNavigator();
 export function MyStack() {
   return (
     <Stack.Navigator initialRouteName=''>
-      <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
-      <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen name="Home" component={Home} options={{headerShown:false, cardStyle:{flex:1}}}  />
+      <Stack.Screen name="SignUpScreen" component={SignUpScreen} options={{cardStyle:{flex:1}}}/>
       <Stack.Screen name="EditeProfile" component={EditeProfile} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="TipsStore" component={TipsStore} />
