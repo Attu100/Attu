@@ -1,4 +1,4 @@
-
+import {Home} from "./Framework/Screens/Home"
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {MyStack} from "./Framework/Navigation/StackNavigation"

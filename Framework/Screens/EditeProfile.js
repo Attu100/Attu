@@ -12,6 +12,7 @@ export function EditeProfile ({navigation}){
        setProfileImage( require("../../assets/Screenshot_20230912-222618.jpg"))
        },3000) 
     return (
+        <View style={{flex:1}}>
         <ScrollView style={styles.container}>
             <View style={{justifyContent:"center",alignItems:'center'}}> 
                 <View style={styles.profileImage}>
@@ -42,6 +43,7 @@ export function EditeProfile ({navigation}){
 
             </View>
         </ScrollView>
+        </View>
     )
 }
 

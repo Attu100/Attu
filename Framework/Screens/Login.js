@@ -1,12 +1,24 @@
 import { View,Text,StyleSheet,StatusBar,TextInput,TouchableOpacity, Image} from "react-native";
-import {useState} from "react";
+import {useContext, useState} from "react";
+import { AppContext } from "../Components/GlobalVariable";
 
 
 export function Login({navigation}){
+
+
+    const [allow,setAllow] = useState(false)
 const handleClearInput = ()=>{
     setEmail("");
     setPassword("")
 }
+const {userInformation}=useContext(AppContext)
+    const check = (value)=>{
+        userInformation.firstName ==value ? setAllow(true) : null
+    }
+    const Confirm = ()=>{
+    allow ? navigation.navigate("Home") : null
+    }
+
 
     return (
     <View style={styles.container}>
@@ -20,7 +32,7 @@ const handleClearInput = ()=>{
          <TextInput 
                 placeholder="Email"  
                 style={styles.inputField}
-                onChangeText={(value) => {}}
+                onChangeText={(value) => check(value)}
             />
             <TextInput 
                 placeholder="Password"  
@@ -29,7 +41,7 @@ const handleClearInput = ()=>{
             />
 
             <TouchableOpacity 
-                onPress={()=> {navigation.navigate("Home")}}
+                onPress={Confirm}
                 style={styles.button} 
             >
                 <Text>Login</Text>

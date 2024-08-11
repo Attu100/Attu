@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { View, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, ScrollView, Image } from "react-native";
+import { View, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, ScrollView,  Image } from "react-native";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faUserCircle} from "@fortawesome/free-solid-svg-icons"
 import { AppContext } from "../Components/GlobalVariable";
@@ -8,22 +8,17 @@ export function SignUpScreen({navigation}){
     const {userInformation,setUserInformation}=useContext(AppContext)
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.imageContainer}>
+            <View style={styles.imageContainer}> 
                 {/* <FontAwesomeIcon icon={faUserCircle} size="100" color="gold"/> */}
                 <Image source={require("../../assets/Screenshot_20230912-222618.jpg")}  resizeMode ="contain" style={{width:99,height:99,borderRadius:50}} defaultSource={require("../../assets/user.png")}/>
             </View>
-            <TouchableOpacity 
-                    style={styles.button} 
-                   onPress={()=>navigation.navigate("Login")}
-                >
-                    <Text>Register</Text>
-                </TouchableOpacity>
+            
             <View style={[styles.inputContainer,]}>
                 <Text>{userInformation.firstName}</Text>
                 <TextInput 
                     placeholder="First name"  
                     style={styles.inputField}
-                    
+                    onChangeText={(value)=>setUserInformation({firstName:value})}
                 />
                 <TextInput 
                     placeholder="Other name"  
@@ -74,9 +69,15 @@ export function SignUpScreen({navigation}){
                     style={styles.inputField}
                     
                 />
+                <TouchableOpacity 
+                    style={styles.button} 
+                //    onPress={()=>navigation.navigate("Login")}
+                >
+                    <Text>Login</Text>
+                </TouchableOpacity>
                 
                 <Text>Already have account  
-                    <TouchableOpacity style={{padding:4}}> <Text style={{padding:4,backgroundColor:"gold",fontWeight:"700"}}> Login</Text>
+                    <TouchableOpacity onPress={()=>navigation.navigate("Login")} style={{padding:4}}> <Text style={{padding:4,backgroundColor:"gold",fontWeight:"700"}}> Login</Text>
                 </TouchableOpacity></Text>
             </View>
             
