@@ -7,11 +7,15 @@ import { Profile } from './Framework/Screens/Profile';
 import { EditeProfile } from './Framework/Screens/EditeProfile';
 import { Leagues } from './Framework/Screens/Leagues';
 import { OurPlans } from './Framework/Screens/OurPlans';
+import { RefundPoliy } from './Framework/Screens/RefundPolicy';
+import { TipsStore } from './Framework/Screens/TipsSTore';
+import { NavigationContainer } from '@react-navigation/native';
+import {MyStack} from "./Framework/Navigation/StackNavigation"
 export default function App() {
   return (
-    <View style={styles.container}>
-      <OurPlans/>
-    </View>
+    <NavigationContainer style={styles.container}>
+      <MyStack/>
+    </NavigationContainer>
   );
 }
 

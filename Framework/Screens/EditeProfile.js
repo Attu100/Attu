@@ -1,10 +1,21 @@
+import { useState } from "react"
 import { Image, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
-export function EditeProfile (){
+export function EditeProfile ({navigation}){
+
+    const timeOut = ()=>{
+        setTimeout(()=>{
+            navigation.goBack()
+        },1000)
+        }
+        const [profileImage,setProfileImage]=useState()
+       setTimeout(()=>{
+       setProfileImage( require("../../assets/Screenshot_20230912-222618.jpg"))
+       },3000) 
     return (
         <ScrollView style={styles.container}>
             <View style={{justifyContent:"center",alignItems:'center'}}> 
                 <View style={styles.profileImage}>
-                    <Image defaultSource={require("../../assets/user.png")} style={{width:99,borderWidth:2,height:99,borderRadius:50}}/>
+                    <Image source={profileImage} defaultSource={require("../../assets/user.png")} style={{width:99,borderWidth:2,height:99,borderRadius:50}}/>
                     <TouchableOpacity style={styles.profileImageButton} onPress={{}}>
                         <Text style={{textAlign:"center",color:"white"}}>+</Text>
                     </TouchableOpacity>
@@ -24,7 +35,7 @@ export function EditeProfile (){
                 </View>
                 
                 <View>
-                    <TouchableOpacity style={styles.editeProfileButton} onPress={{}}>
+                    <TouchableOpacity style={styles.editeProfileButton} onPress={()=>timeOut()}>
                         <Text style={{textAlign:"center"}}>submit</Text>
                     </TouchableOpacity>
                 </View>

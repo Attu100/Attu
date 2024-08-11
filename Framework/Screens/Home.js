@@ -1,8 +1,4 @@
 import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { SignUpScreen } from "./SignUp";
-
-
-
 const Array =[{
     date:"1/08/2024",
     country:"NGR",
@@ -12,7 +8,7 @@ const Array =[{
     score:"2:1",
     sureGame:"H"
 }]
-export function Home(){
+export function Home({navigation}){
     return (
         <ScrollView style={styles.container}>
             <View style={styles.header}>
@@ -21,7 +17,7 @@ export function Home(){
                     <Image source={require("../../assets/icon.png")} style={{width:40,height:40,borderRadius:20,}}/>
                 </View> 
                 <View style={styles.menuButton}>
-                    <TouchableOpacity style={{backgroundColor:"purple",padding:8,borderRadius:4}}><Text style={{color:"gold"}}>Menu</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate("Profile")} style={{backgroundColor:"purple",padding:8,borderRadius:4}}><Text style={{color:"gold"}}>Menu</Text></TouchableOpacity>
                 </View>
             </View>
             <View style={styles.intro}>
@@ -48,7 +44,7 @@ export function Home(){
 
                 </View>
                 <View style={styles.logOutField}>
-                    <TouchableOpacity style={{backgroundColor:"purple",padding:8,borderRadius:4}}>
+                    <TouchableOpacity onPress={()=>navigation.navigate("Login")} style={{backgroundColor:"purple",padding:8,borderRadius:4}}>
                         <Text style={{color:"gold"}}>LogOut</Text>
                     </TouchableOpacity>
                 </View>

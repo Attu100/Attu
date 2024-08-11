@@ -34,16 +34,15 @@ const handleClearInput = ()=>{
             />
 
             <TouchableOpacity 
-            onPress={()=> {
-                console.log(email); 
-                handleClearInput
+            onPress={()=> {navigation.navigate("Home")
+                
             }
             }
             style={styles.button} 
         >
             <Text>Login</Text>
             </TouchableOpacity>
-            <Text>Do not have account <TouchableOpacity style={{padding:4}}>
+            <Text>Do not have account <TouchableOpacity onPress={()=>navigation.navigate("SignUp")} style={{padding:4}}>
                  <Text style={{padding:4,backgroundColor:"gold",fontWeight:"900"}}>SignUp</Text>
                  </TouchableOpacity></Text> 
          </View>       

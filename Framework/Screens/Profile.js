@@ -1,12 +1,12 @@
 import { Image, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
-export function Profile (){
+export function Profile ({navigation}){
     return (
         <ScrollView style={styles.container}>
             <View style={{justifyContent:"center",alignItems:'center'}}> 
                 <View style={styles.profileImage}>
                     <Image defaultSource={require("../../assets/user.png")} style={{width:99,borderWidth:2,height:99,borderRadius:50}}/>
                         <View>
-                            <TouchableOpacity style={styles.editeProfileButton}>
+                            <TouchableOpacity onPress={()=>navigation.navigate("EditeProfile")} style={styles.editeProfileButton}>
                                 <Text style={{textAlign:"center"}}>edite profile</Text>
                             </TouchableOpacity>
                         </View>
