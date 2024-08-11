@@ -5,7 +5,7 @@ export function EditeProfile ({navigation}){
     const timeOut = ()=>{
         setTimeout(()=>{
             navigation.goBack()
-        },1000)
+        },5000)
         }
         const [profileImage,setProfileImage]=useState()
        setTimeout(()=>{

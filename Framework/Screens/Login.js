@@ -3,9 +3,6 @@ import {useState} from "react";
 
 
 export function Login({navigation}){
-const {email, setEmail}=useState("")
-const {password,setPassword}=useState("")
-
 const handleClearInput = ()=>{
     setEmail("");
     setPassword("")
@@ -24,27 +21,23 @@ const handleClearInput = ()=>{
                 placeholder="Email"  
                 style={styles.inputField}
                 onChangeText={(value) => {}}
-                value={email}
             />
             <TextInput 
                 placeholder="Password"  
                 style={styles.inputField}
                 onChangeText={(value) => {}}
-                value={password}
             />
 
             <TouchableOpacity 
-            onPress={()=> {navigation.navigate("Home")
-                
-            }
-            }
-            style={styles.button} 
-        >
-            <Text>Login</Text>
+                onPress={()=> {navigation.navigate("Home")}}
+                style={styles.button} 
+            >
+                <Text>Login</Text>
             </TouchableOpacity>
-            <Text>Do not have account <TouchableOpacity onPress={()=>navigation.navigate("SignUp")} style={{padding:4}}>
+            <Text>Do not have account <TouchableOpacity onPress={()=>{navigation.navigate("RefundPolicy")}} style={{padding:4}}>
                  <Text style={{padding:4,backgroundColor:"gold",fontWeight:"900"}}>SignUp</Text>
-                 </TouchableOpacity></Text> 
+                 </TouchableOpacity>
+                 </Text> 
          </View>       
     </View>
     )

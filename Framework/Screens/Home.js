@@ -1,13 +1,4 @@
 import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-const Array =[{
-    date:"1/08/2024",
-    country:"NGR",
-    club:"porto",
-    Tip_1:"0 2.5",
-    tip_2:"over 1.5",
-    score:"2:1",
-    sureGame:"H"
-}]
 export function Home({navigation}){
     return (
         <ScrollView style={styles.container}>
@@ -17,7 +8,7 @@ export function Home({navigation}){
                     <Image source={require("../../assets/icon.png")} style={{width:40,height:40,borderRadius:20,}}/>
                 </View> 
                 <View style={styles.menuButton}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("SignUp")} style={{backgroundColor:"purple",padding:8,borderRadius:4}}><Text style={{color:"gold"}}>Menu</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate("SignUpScreen")} style={{backgroundColor:"purple",padding:8,borderRadius:4}}><Text style={{color:"gold"}}>Menu</Text></TouchableOpacity>
                 </View>
             </View>
             <View style={styles.intro}>

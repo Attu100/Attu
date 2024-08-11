@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, View } from "react-native";
 
-export function RefundPoliy (){
+export function RefundPolicy ({navigation}){
     return (
         <View style={{justifyContent:"center",alignItems:"center",borderRadius:20,margin:10, flex:1,backgroundColor:'purple'}}>
 
@@ -14,7 +14,7 @@ export function RefundPoliy (){
                 thanks.
             </Text>
             <View style={{alignSelf:"center",marginTop:20}}>
-                <TouchableOpacity style={{backgroundColor:"gold",padding:5,borderRadius:10}}><Text style={{color:"white"}}>ok</Text></TouchableOpacity>
+                <TouchableOpacity onPress={()=>{navigation.navigate("SignUpScreen")}} style={{backgroundColor:"gold",padding:5,borderRadius:10}}><Text style={{color:"white"}}>ok</Text></TouchableOpacity>
             </View>
         </View>
         </View>
