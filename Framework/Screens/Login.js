@@ -23,13 +23,13 @@ const handleClearInput = ()=>{
          <TextInput 
                 placeholder="Email"  
                 style={styles.inputField}
-                onChangeText={(value) => setEmail(value)}
+                onChangeText={(value) => {}}
                 value={email}
             />
             <TextInput 
                 placeholder="Password"  
                 style={styles.inputField}
-                onChangeText={(value) => setPassword(value)}
+                onChangeText={(value) => {}}
                 value={password}
             />
 

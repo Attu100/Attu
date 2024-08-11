@@ -1,19 +1,35 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { View, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, ScrollView, Image } from "react-native";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faUserCircle} from "@fortawesome/free-solid-svg-icons"
-export function SignUpScreen({navigation}){
-    const {firstName, setFirstName}=useState("")
-    const {otherName, setOtherName}=useState("")
-    const {email, setEmail}=useState("")
-    const {PhoneNumber, setPhoneNumber}=useState("")
-    const {gender, setGender}=useState("")
-    const {dateOfbirth, setDateOfBirth}=useState("")
-    const {nationality,setNationality}=useState("")
-    const{state,setState}=useState("")
-    const {LGA,setLGA}=useState()
-    const {password,setPassword}=useState("")
-    const {userUID,setUserUID}=useState(Math.random()*1000000)
+import { AppContext } from "../Components/GlobalVariable";
+
+export function SignUp(value,{navigation}){
+    const [firstName, setFirstName]=useState("")
+    const [lastName, setLastName]=useState("")
+    const [email, setEmail]=useState("")
+    const [PhoneNumber, setPhoneNumber]=useState("")
+    const [gender, setGender]=useState("")
+    const [dateOfbirth, setDateOfBirth]=useState("")
+    const [nationality,setNationality]=useState("")
+    const [state,setState]=useState("")
+    const [LGA,setLGA]=useState()
+    const [password,setPassword]=useState("")
+    const [userUID,setUserUID]=useState(Math.random()*1000000)
+    const {userInformation,setUserInformation}=useContext(AppContext)
+    setUserInformation(
+        {
+        firstName:firstName,
+        lastName:lastName,
+        email:email,
+        PhoneNumber:PhoneNumber,
+        gender:gender,
+        nationality:nationality,
+        state:state,
+        LGA:LGA,
+        balance:0,
+        }
+    )
     return (
         <ScrollView style={styles.container}>
             <View style={styles.imageContainer}>
@@ -21,6 +37,7 @@ export function SignUpScreen({navigation}){
                 <Image source={require("../../assets/Screenshot_20230912-222618.jpg")}  resizeMode ="contain" style={{width:99,height:99,borderRadius:50}} defaultSource={require("../../assets/user.png")}/>
             </View>
             <View style={[styles.inputContainer,]}>
+                <Text>{userInformation.firstName}</Text>
                 <TextInput 
                     placeholder="First name"  
                     style={styles.inputField}
@@ -29,7 +46,7 @@ export function SignUpScreen({navigation}){
                 <TextInput 
                     placeholder="Other name"  
                     style={styles.inputField}
-                    onChangeText={value => setOtherName(value)}
+                    onChangeText={value => setLastName(value)}
                 />
                 <TextInput 
                     placeholder="Email"  

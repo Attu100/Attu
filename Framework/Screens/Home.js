@@ -17,7 +17,7 @@ export function Home({navigation}){
                     <Image source={require("../../assets/icon.png")} style={{width:40,height:40,borderRadius:20,}}/>
                 </View> 
                 <View style={styles.menuButton}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("Profile")} style={{backgroundColor:"purple",padding:8,borderRadius:4}}><Text style={{color:"gold"}}>Menu</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate("SignUp")} style={{backgroundColor:"purple",padding:8,borderRadius:4}}><Text style={{color:"gold"}}>Menu</Text></TouchableOpacity>
                 </View>
             </View>
             <View style={styles.intro}>
