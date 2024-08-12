@@ -1,4 +1,5 @@
 import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Them } from "../Components/Them";
 export function Home({navigation}){
     return (
         <ScrollView style={styles.container}>
@@ -203,7 +204,7 @@ const styles=StyleSheet.create({
         justifyContent:"space-evenly",
         borderRadius:10,
         margin:5,
-        backgroundColor:"#faebfaf5",
+        backgroundColor:Them.colors.button
     },
     freePrediction:{
         borderRadius:8,

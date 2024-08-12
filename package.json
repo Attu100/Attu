@@ -27,6 +27,7 @@
     "expo-modules-core": "^1.12.20",
     "expo-splash-screen": "~0.27.5",
     "expo-status-bar": "~1.12.1",
+    "fbjs": "^3.0.5",
     "firebase": "^9.6.11",
     "formik": "^2.4.6",
     "html-entities": "^2.5.2",
@@ -44,7 +45,8 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@babel/generator": "^7.25.0"
   },
   "private": true
 }

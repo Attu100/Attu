@@ -14,13 +14,13 @@ export function MyStack() {
   return (
     <Stack.Navigator initialRouteName=''>
       <Stack.Screen name="Home" component={Home} options={{headerShown:false, cardStyle:{flex:1}}}  />
-      <Stack.Screen name="SignUpScreen" component={SignUpScreen} options={{cardStyle:{flex:1}}}/>
-      <Stack.Screen name="EditeProfile" component={EditeProfile} />
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="TipsStore" component={TipsStore} />
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Leagues" component={Leagues} />
-      <Stack.Screen name="RefundPolicy" component={RefundPolicy} />
+      <Stack.Screen name="SignUpScreen" component={SignUpScreen} options={{headerShown:false, cardStyle:{flex:1}}}/>
+      <Stack.Screen name="EditeProfile" component={EditeProfile} options={{headerShown:false, cardStyle:{flex:1}}} />
+      <Stack.Screen name="Profile" component={Profile} options={{headerShown:false, cardStyle:{flex:1}}}/>
+      <Stack.Screen name="TipsStore" component={TipsStore} options={{headerShown:false, cardStyle:{flex:1}}}/>
+      <Stack.Screen name="Login" component={Login} options={{headerShown:false, cardStyle:{flex:1}}}/>
+      <Stack.Screen name="Leagues" component={Leagues} options={{headerShown:false, cardStyle:{flex:1}}}/>
+      <Stack.Screen name="RefundPolicy" component={RefundPolicy} options={{headerShown:false, cardStyle:{flex:1}}}/>
     </Stack.Navigator>
   );
 }
