@@ -3,6 +3,7 @@ import { View, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, ScrollV
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faUserCircle} from "@fortawesome/free-solid-svg-icons"
 import { AppContext } from "../Components/GlobalVariable";
+import { Them } from "../Components/Theme";
 
 export function SignUpScreen({navigation}){
     const {userInformation,setUserInformation}=useContext(AppContext)
@@ -16,56 +17,56 @@ export function SignUpScreen({navigation}){
             <View style={[styles.inputContainer,]}>
                 <Text>{userInformation.firstName}</Text>
                 <TextInput 
-                    placeholder="First name"  
+                    placeholder="First name :"  
                     style={styles.inputField}
                     onChangeText={(value)=>setUserInformation({firstName:value})}
                 />
                 <TextInput 
-                    placeholder="Other name"  
+                    placeholder="Other name :"  
                     style={styles.inputField}
                     
                 />
                 <TextInput 
-                    placeholder="Email"  
+                    placeholder="Email :"  
                     style={styles.inputField}
             
                 />
                 <TextInput 
-                    placeholder="Phone number"  
+                    placeholder="Phone number :"  
                     style={styles.inputField}
                     
                 />
                 <TextInput 
-                    placeholder="Gender"  
+                    placeholder="Gender :"  
                     style={styles.inputField}
                 
                 />
                 <TextInput 
-                    placeholder="Date of birth"  
+                    placeholder="Date of birth :"  
                     style={styles.inputField}
                 />
                 <TextInput 
-                    placeholder="Nationality"  
-                    style={styles.inputField}
-                    
-                />
-                <TextInput 
-                    placeholder="State"  
+                    placeholder="Nationality :"  
                     style={styles.inputField}
                     
                 />
                 <TextInput 
-                    placeholder="LGA"  
+                    placeholder="State :"  
                     style={styles.inputField}
                     
                 />
                 <TextInput 
-                    placeholder="Password"  
+                    placeholder="LGA :"  
                     style={styles.inputField}
                     
                 />
                 <TextInput 
-                    placeholder="Confirm Password"  
+                    placeholder="Password :"  
+                    style={styles.inputField}
+                    
+                />
+                <TextInput 
+                    placeholder="Confirm Password :"  
                     style={styles.inputField}
                     
                 />
@@ -73,11 +74,11 @@ export function SignUpScreen({navigation}){
                     style={styles.button} 
                 //    onPress={()=>navigation.navigate("Login")}
                 >
-                    <Text>Login</Text>
+                    <Text style={{color:Them.colors.secondary1,fontWeight:"700"}}>Submit</Text>
                 </TouchableOpacity>
                 
                 <Text>Already have account  
-                    <TouchableOpacity onPress={()=>navigation.navigate("Login")} style={{padding:4}}> <Text style={{padding:4,backgroundColor:"gold",fontWeight:"700"}}> Login</Text>
+                    <TouchableOpacity onPress={()=>navigation.navigate("Login")} style={styles.button}> <Text style={{padding:4,backgroundColor:"gold",fontWeight:"700",color:Them.colors.secondary1,}}> Login</Text>
                 </TouchableOpacity></Text>
             </View>
             
@@ -118,7 +119,7 @@ const styles=StyleSheet.create({
         inputField:{
             width:"70%",
             borderRadius:10,
-            backgroundColor:"purple",
+            backgroundColor:Them.colors.secondary1,
             color:"gold",
             padding:5,
             margin:5

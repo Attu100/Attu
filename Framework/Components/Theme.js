@@ -1,9 +1,7 @@
-import { text } from "@fortawesome/fontawesome-svg-core";
-
 export const Them = {
     colors:{
         primary:"gold",
-        secondary:"purple",
+        secondary1:"purple",
         textColor:"white"
         }
     }

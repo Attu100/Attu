@@ -1,32 +1,57 @@
 import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Them } from "../Components/Them";
+import { Them } from "../Components/Theme";
+import { useContext } from "react";
+import { AppContext } from "../Components/GlobalVariable";
+
+const DATA = [{
+    date:"5/08",
+    country:"niger",
+    club: "m united VS chelsea",
+    tips1:"over 2.50",
+    tips2:"",
+    score:"",
+    percent:""
+    
+},
+{
+    date:"5/08/2024",
+    country:"niger",
+    club: "manchester VS chelsea",
+    tips1:"over 2.50",
+    tips2:"",
+    score:"",
+    percent:""
+    
+}]
+
 export function Home({navigation}){
+    const {userInformation}=useContext(AppContext)
     return (
         <ScrollView style={styles.container}>
             <View style={styles.header}>
                 <View style={styles.companyName}>Attu</View>
                 <View style={styles.companyLogo}> 
-                    <Image source={require("../../assets/icon.png")} style={{width:40,height:40,borderRadius:20,}}/>
+                    <Image source={require("../../assets/Screenshot_20230912-222618.jpg")} style={{width:40,height:40,borderRadius:20,}}/>
                 </View> 
                 <View style={styles.menuButton}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("SignUpScreen")} style={{backgroundColor:"purple",padding:8,borderRadius:4}}><Text style={{color:"gold"}}>Menu</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate("SignUpScreen")} style={{backgroundColor:Them.colors.secondary1,padding:8,borderRadius:4}}><Text style={{color:Them.colors.primary,fontWeight:"700"}}>Menu</Text></TouchableOpacity>
                 </View>
             </View>
             <View style={styles.intro}>
                 <View style={{flex:1, borderRadius:10,margin:4,backgroundColor:"white"}}>
                     <View style={{justifyContent:"center",borderRadius:8,margin:0.5,alignItems:"center"}}>
                         <View style={styles.imageContainer}>
-                        <Image source={require("../../assets/adaptive-icon.png")} style={{width:49,height:49}}/>
+                        <Image source={require("../../assets/profile.jpg")} style={{width:69,height:69,borderRadius:35}}/>
                         </View>
                     </View>
                 
                 
                 <View style={styles.balanceField} >
                     <View>
-                    <Text>hi Name</Text>
+                    <Text>Hi! {userInformation.firstName}</Text>
                     </View>
                     <View>
-                    <Text>Balance:0</Text>
+                    <Text>Balance : {userInformation.balance}</Text>
                     </View>
                 </View>
                 </View>
@@ -36,39 +61,57 @@ export function Home({navigation}){
 
                 </View>
                 <View style={styles.logOutField}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("Login")} style={{backgroundColor:"purple",padding:8,borderRadius:4}}>
-                        <Text style={{color:"gold"}}>LogOut</Text>
+                    <TouchableOpacity onPress={()=>navigation.navigate("Login")} style={{backgroundColor:Them.colors.secondary1,padding:8,borderRadius:4}}>
+                        <Text style={{color:Them.colors.primary,fontWeight:"700"}}>LogOut</Text>
                     </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.prediction}>
-                <View style={styles.overView}>
-                    <Text style={{fontSize:20, color:"purple"}}>
+                
+                <View>
+                    
+                    <View style={{backgroundColor:Them.colors.textColor}}>
+                    <View style={styles.overView}>
+                    <Text style={{fontSize:20, color:Them.colors.primary}}>
                         Free and sure prediction of the today 
                     </Text>
                     <Text >day</Text>
                 </View>
-                <View>
-                    <View style={styles.predictionDetail}>
-                        <Text style={styles.freePrediction}>date</Text>
-                        <Text style={styles.freePrediction}>country</Text>
-                        <Text style={styles.freePrediction}>club</Text>
-                        <Text style={styles.freePrediction}>1st tips</Text>
-                        <Text style={styles.freePrediction}>2nd tips</Text>
-                        <Text style={styles.freePrediction}>Score</Text>
-                        <Text style={styles.freePrediction}>100%</Text>
-                     </View>
-                     <ScrollView style={{backgroundColor:"#faebfaf5", height:100}}>
-                             {/* <FlatList 
-                                data={Array}
-                                renderItem={({value})=> <Text>{value.club}</Text>}
-                            />  */}
-                     </ScrollView>
+                        
+                        <View style={styles.predictionDetail}>
+                            <Text style={styles.freePrediction}>Date</Text>
+                            <Text style={styles.freePrediction}>Country</Text>
+                            <Text style={[styles.freePrediction,{flex:2}]}>Club</Text>
+                            <Text style={styles.freePrediction}>1st tips</Text>
+                            <Text style={styles.freePrediction}>2nd tips</Text>
+                            <Text style={styles.freePrediction}>Score</Text>
+                            <Text style={styles.freePrediction}>100%</Text>
+                        </View>
+                        <ScrollView style={{backgroundColor:Them.colors.textColor, height:100,borderRadius:10}}>
+                            <FlatList 
+                                data={DATA}
+                                renderItem={({item})=>{ 
+                                return(
+                                    <View style={styles.predictionDetail}>
+                                        <Text style={styles.freePrediction}>{item.date}</Text>
+                                        <Text style={styles.freePrediction}>{item.country}</Text>
+                                        <Text style={[styles.freePrediction,{flex:2}]}>{item.club}</Text>
+                                        <Text style={styles.freePrediction}>{item.tips1}</Text>
+                                        <Text style={styles.freePrediction}>{item.tips2}</Text>
+                                        <Text style={styles.freePrediction}>{item.score}</Text>
+                                        <Text style={styles.freePrediction}>{item.percent}</Text>
+                                    </View>
+                                )
+                                    }}
+                            />  
+                        </ScrollView>
+                    </View>
+                    
 
                         
                      <View style={styles.simpleBookingCode}>
-                        <View  style={{backgroundColor:"#faebfaf5",height:40, margin:5,borderRadius:10, alignItems:"center"}}>
-                        <Text style={{color:"purple"}}>Simple sportybet booking code</Text>
+                        <View  style={{backgroundColor:Them.colors.textColor,height:40, margin:5,borderRadius:10, alignItems:"center"}}>
+                        <Text style={{color:Them.colors.primary,fontWeight:"700"}}>Simple sportybet booking code</Text>
                         <Text style={styles.sportybetCode}>1467857</Text>
                         </View>
                        <View style={styles.singleBet}>
@@ -79,36 +122,40 @@ export function Home({navigation}){
                             <Text>over 3.50</Text>
                         </View> 
                      </View>
+                     <View style={{backgroundColor:Them.colors.textColor}}>
                      <View style={styles.recentWinings}>
                         <Text style={styles.freePrediction}>date</Text>
                         <Text style={styles.freePrediction}>country</Text>
                         <Text style={styles.freePrediction}>club</Text>
                         <Text style={styles.freePrediction}>outcome</Text>
                      </View>
-                     <ScrollView style={{backgroundColor:"#faebfaf5", height:100}}>
+                     <ScrollView style={{backgroundColor:Them.colors.textColor, height:100,borderRadius:10}}>
                              {/* <FlatList 
                                 data={Array}
                                 renderItem={({value})=> <Text>{value.club}</Text>}
+                                
                             />  */}
                      </ScrollView>
+                     </View>
+                    
                 </View>
             </View>
             
             <View style={styles.moreDetailField}>
                     
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>About Us</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>Help</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>FAQ</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>Tip Store</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>leagues</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>Our plans </Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>experts Acca</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>sport news</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>disclaimer </Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>refund policy</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>channel</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>terms & condition</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center"}}>payment method</Text></TouchableOpacity>
+                    <TouchableOpacity  style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>About Us</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>Help</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>FAQ</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>Tip Store</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>leagues</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>Our plans </Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>experts Acca</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>sport news</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>disclaimer </Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>refund policy</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>channel</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>terms & condition</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.moreDetailContainer}><Text style={{textAlign:"center",color:Them.colors.primary}}>payment method</Text></TouchableOpacity>
             </View>
         </ScrollView>
 )
@@ -144,7 +191,6 @@ const styles=StyleSheet.create({
                 margin:5,
                 justifyContent:"center",
                 alignItems:"center",
-                backgroundColor:"gold"
             },
             menuButton:{
                 flex:1,
@@ -157,12 +203,10 @@ const styles=StyleSheet.create({
         width:70,
         height:70,
         borderRadius:35,
-        borderColor:"gold",
         backgroundColor:"white",
         justifyContent:"center",
-        alignContent:"center",
+        alignItems:"center",
         padding:1,
-        borderWidth:2
   },   intro:{
     height:150,
     borderRadius:15,
@@ -193,7 +237,7 @@ const styles=StyleSheet.create({
    },
     overView:{
         backgroundColor:"#faebfaf5",
-        height:80,
+        height:50,
         margin:5,
         borderRadius:10,
         flexDirection:"row",
@@ -201,17 +245,29 @@ const styles=StyleSheet.create({
     },
  predictionDetail:{
         flexDirection:"row",
-        justifyContent:"space-evenly",
-        borderRadius:10,
+        justifyContent:"center",
+        alignItems:"center",
         margin:5,
-        backgroundColor:Them.colors.button
+        borderWidth:1,
+        backgroundColor:Them.colors.textColor
+    },
+FlatListStyle:{
+        flexDirection:"row",
+        justifyContent:"space-evenly",
+        margin:5,
+        backgroundColor:Them.colors.textColor
     },
     freePrediction:{
+        justifyContent:"center",
+        textAlign:"center",
         borderRadius:8,
         padding:5,
         margin:3,
-        backgroundColor:"#e217d8",
-        color:"gold"
+        fontWeight:"700",
+        color:"gold",
+        flex:1,
+        borderWidth:1
+        
     },
     simpleBookingCode:{
         height:200,
@@ -229,12 +285,15 @@ const styles=StyleSheet.create({
         padding:4,
         flex:1,
         margin:5,
-        backgroundColor:"#faebfaf5",
+        backgroundColor:Them.colors.textColor,
         borderRadius:10
     },
     recentWinings:{
         flexDirection:"row",
-        justifyContent:"space-evenly"
+        justifyContent:"space-evenly",
+        borderRadius:10,
+        margin:5,
+        backgroundColor:Them.colors.textColor
     },
     moreDetailField:{
         padding:1,
@@ -246,7 +305,7 @@ const styles=StyleSheet.create({
         width:100,
         margin:2,
         borderRadius:10,
-        backgroundColor:"gold",
+        backgroundColor:Them.colors.secondary1,
         alignItems:"center",
         justifyContent:"center",
         color:"white",

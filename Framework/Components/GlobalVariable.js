@@ -12,7 +12,7 @@ const [userInformation,setUserInformation]= useState({
     lastName:"",
     email:"",
     phoneNumber:"",
-    balance:0,
+    balance:1000,
     gender:"",
     nationality:"",
     state:"",
